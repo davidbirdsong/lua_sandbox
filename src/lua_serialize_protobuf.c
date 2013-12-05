@@ -50,7 +50,7 @@ int serialize_table_as_pb(lua_sandbox* lsb, int index)
   if (encode_string(lsb, d, 7, "EnvVersion", index)) return 1;
   if (encode_int(lsb, d, 8, "Pid", index)) return 1;
   if (encode_string(lsb, d, 9, "Hostname", index)) return 1;
-  if (encode_fields(lsb, d, 10, "Fields", index)) return 1;
+  if (encode_fields(lsb, d, 11, "Fields", index)) return 1;
   // if we go above 15 pb_write_tag will need to start varint encoding
   needed = 1;
   if (needed > d->size - d->pos) {
