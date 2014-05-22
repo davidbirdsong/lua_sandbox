@@ -51,6 +51,7 @@ else()
     "${EP_BASE}/lib/liblua.a"
     "${EP_BASE}/lib/liblpeg.a"
     "${EP_BASE}/lib/libcjson.a"
+    "${EP_BASE}/lib/libpb.a"
     ${LINK_DL} -lm
     )
     add_library(luasandbox STATIC ${LUA_SANDBOX_SRC})

@@ -66,6 +66,14 @@ else()
     )
 endif()
 include_directories(${LUA_INCLUDE_DIR})
+externalproject_add(
+    pb-0_0
+    GIT_REPOSITORY https://github.com/sean-lin/protoc-gen-lua.git
+    PATCH_COMMAND ${PATCH_EXECUTABLE} -p1 < ${CMAKE_CURRENT_LIST_DIR}/protoc-gen-lua-0_0.patch
+    CMAKE_ARGS ${SANDBOX_CMAKE_ARGS}
+    INSTALL_DIR ${EP_BASE}
+    )
+add_dependencies(pb-0_0 ${LUA_PROJECT})
 
 externalproject_add(
     lpeg-0_12
